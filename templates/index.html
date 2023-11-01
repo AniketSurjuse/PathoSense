@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<div class="container center-container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form action="/pneumonia" method="post" enctype="multipart/form-data">
+                <h2 class="text-center">Tell us more about you!</h2>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control-file" id="image" name="image">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+
+            {% if data =='normal' %}
+            <button class="btn btn-success btn-block">Normal</button>
+            {%endif%}
+            {% if data=='pneumonia' %}
+            <button class="btn btn-danger btn-block">Pneumonia</button>
+            {%endif%}
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock content %}
